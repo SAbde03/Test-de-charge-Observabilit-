@@ -6,3 +6,6 @@
 <img width="1859" height="817" alt="Screenshot 2026-01-02 003510" src="https://github.com/user-attachments/assets/a1771295-7284-438d-bb64-ffd404efe967" />
 <img width="1859" height="867" alt="Screenshot 2026-01-02 003638" src="https://github.com/user-attachments/assets/c194ba81-d724-454b-ba4d-668c29f5097a" />
 <img width="658" height="274" alt="Screenshot 2026-01-02 003801" src="https://github.com/user-attachments/assets/c09b453c-eea5-4125-86f3-0e1865e64725" />
+
+## Conclusion
+Le verrou DB est important en architecture multi-instances pour garantir la cohérence des données lors d'accès concurrents : il force MySQL à traiter les requêtes une par une sur une ressource partagée, empêchant ainsi plusieurs conteneurs de décrémenter un stock simultanément et d'aboutir à des valeurs incohérentes ou négatives. En complément, le Circuit Breaker assure la résilience du système en isolant un service défaillant pour éviter la propagation des pannes en cascade, tandis que le Fallback fournit une réponse de secours "dégradée" afin de maintenir la continuité du service pour l'utilisateur final malgré l'erreur.
